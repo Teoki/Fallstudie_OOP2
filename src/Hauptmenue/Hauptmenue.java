@@ -43,7 +43,7 @@ public class Hauptmenue extends JFrame {
         this.add(ticTacToeBtn);
         this.add(muehleBtn);
 
-        //Fenster werden erzeugt,-> die Klasse "ActionListener" hat nur eine Methode "actionPerformed()" die bei einem Klick aufgerufen wird
+        //Fenster werden durch ActionEvent erzeugt,-> die Klasse "ActionListener" hat nur eine Methode "actionPerformed()" die bei einem Klick aufgerufen wird
         memoryBtn.addActionListener(e -> new Memory());
         schiffeversenkenBtn.addActionListener(e -> new Schiffeversenken());
         vierGewinntBtn.addActionListener(e -> new VierGewinnt());
