@@ -13,8 +13,8 @@ public class Spielbereich extends JPanel implements ActionListener {
     private List<JButton> buttonList = new ArrayList<>();
     private String name;
     private JLabel label = new JLabel();
-    private int anzahlSchiffe = 3; //könnte eine lokale Variable sein, aber steht hier, falls man den User entscheiden lassen will kann man den Wert beim Erzeugen eines Spielbereichs übergeben
-    private int platzierteSchiffe; //wird als Zählervariable im ActionListener verwendet
+    private int anzahlSchiffe = 3; //könnte eine lokale Variable sein, aber steht hier, falls man den User entscheiden lassen will kann man den Wert beim Erzeugen eines Spielbereichs übergeben (im Konstruktor)
+    private int platzierteSchiffe; //Zählervariable im ActionListener
     private int anzahlTreffer; //Zählervariable im ActionListener
     private JFrame spielFenster; //um nach dem Sieg das Spielfenster (also SchiffeVersenken) zu schließen
     private Spielbereich gegnerischerSpielbereich;
@@ -28,14 +28,14 @@ public class Spielbereich extends JPanel implements ActionListener {
         JPanel textPanel = new JPanel();
         label.setText(name + ", platziere drei Schiffe...");
         textPanel.add(label);
-        //TODO textPanel.setBorder(new LineBorder(Color.BLUE));  //Rahmen des Breichs einfärben
+        //TODO textPanel.setBorder(new LineBorder(Color.BLUE));  //Rahmen des Bereichs einfärben
 
         JPanel feldPanel = new JPanel();
         feldPanel.setLayout(new GridLayout(5, 5));
         for (JButton b : buttonList) {
             feldPanel.add(b);
         }
-        //TODO feldPanel.setBorder(new LineBorder(Color.MAGENTA)); //Rahmen des Breichs einfärben
+        //TODO feldPanel.setBorder(new LineBorder(Color.MAGENTA)); //Rahmen des Bereichs einfärben
 
         this.add(textPanel);
         this.add(feldPanel);
@@ -44,7 +44,7 @@ public class Spielbereich extends JPanel implements ActionListener {
         boxLayout.addLayoutComponent("textPanel", textPanel);
         boxLayout.addLayoutComponent("feldPanel", feldPanel);
         this.setLayout(boxLayout);
-        //TODO setBorder(new LineBorder(Color.GREEN));   //Rahmen des Breichs einfärben
+        //TODO setBorder(new LineBorder(Color.GREEN));   //Rahmen des Bereichs einfärben
         this.setVisible(true);
     }
 

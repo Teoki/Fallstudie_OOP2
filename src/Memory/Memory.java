@@ -17,11 +17,6 @@ public class Memory extends JFrame implements ActionListener {
 
     private Container hauptContentPane;
     private ImageIcon[] alleKartenIcons;//0-7 = Vorderseite, 8 = Rückseite
-    private JFrame fenster = this;
-
-    public JFrame getFenster() {
-        return fenster;
-    }
 
     public Memory() {
         this.setTitle("Memory");
@@ -44,9 +39,7 @@ public class Memory extends JFrame implements ActionListener {
         setNeuesElementImMenue("Neues Spiel", dropDownElement, this);
         setNeuesElementImMenue("Beenden", dropDownElement, this);
 
-        //Karten laden
-        this.alleKartenIcons = getAlleKartenIcons();
-
+        this.alleKartenIcons = getAlleKartenIcons();    //Karten laden
         this.starteNeuesSpiel();
     }
 
@@ -73,22 +66,19 @@ public class Memory extends JFrame implements ActionListener {
             nummernFuerKarten[2 * i + 1] = i;
         }
 
-//Mischen / randomizer
-        mischeAlleNummern(nummernFuerKarten);
-//kartenObjekte
-        for (int kartenNummer : nummernFuerKarten) {
+        mischeAlleNummern(nummernFuerKarten);   //Mischen / randomizer
+        for (int kartenNummer : nummernFuerKarten) {    //kartenObjekte
             Karte neueKarte = new Karte(steuerung, this.alleKartenIcons[kartenNummer], rueckseiteIcon, kartenNummer); //neue Karten werden erzeugt
             spielbereich.add(neueKarte);
         }
         return spielbereich;
     }
 
-
-    private void mischeAlleNummern(int[] nummernFuerKarten) {
+    private void mischeAlleNummern(int[] nummernFuerKarten) {   //hier wird getauscht (wie in der Vorlesung)
         Random random = new Random();
         for (int i = 0; i < nummernFuerKarten.length; i++) {
             int randomNummer = random.nextInt(nummernFuerKarten.length);
-            //hier wird getauscht (wie in der Vorlesung)
+
             int ersteNummer = nummernFuerKarten[randomNummer];
             nummernFuerKarten[randomNummer] = nummernFuerKarten[i];
             nummernFuerKarten[i] = ersteNummer;
@@ -108,8 +98,8 @@ public class Memory extends JFrame implements ActionListener {
         //neue Karten sichtbar
         this.hauptContentPane.add(erzeugeKarten());
 
-        //Hauptfenster wird angezeigt
-        this.setVisible(true);
+
+        this.setVisible(true);  //Hauptfenster wird angezeigt
     }
 
     //Aktionen für das Drop-Down-Menü

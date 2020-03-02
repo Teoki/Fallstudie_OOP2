@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class KartenSteuerung implements ActionListener {
 
-    private Vector<Karte> aufgedeckteKarten; //<Karte>, damit dem Vector nur elemente des Datentyps Karte hinzugefügt werden kann
+    private Vector<Karte> aufgedeckteKarten; //<Karte>, damit dem Vector nur Elemente des Datentyps Karte hinzugefügt werden kann
     private Timer zudeckTimer;
     private int aufdeckCounter;
     private JFrame fenster;
@@ -22,7 +22,7 @@ public class KartenSteuerung implements ActionListener {
 
     public boolean aufdecken(Karte karte) {
         if (this.aufgedeckteKarten.size() < 2) {
-            return deckeKarteAuf(karte); //prüft ob die karte wirklich aufgedeckt werden soll oder nicht (löscht im inneren Vector-Inhalt oder startet den Timer)
+            return deckeKarteAuf(karte); //prüft ob die Karte wirklich aufgedeckt werden soll oder nicht (löscht im inneren Vector-Inhalt oder startet den Timer)
         }
         return false;
     }

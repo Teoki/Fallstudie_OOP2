@@ -2,7 +2,7 @@ package SchiffeVersenken;
 
 import javax.swing.*;
 
-public class SchiffeVersenken extends JFrame { //extends ActionListener geht auch hier, wird aber bis jetzt hier nicht benötigt
+public class SchiffeVersenken extends JFrame { //extends ActionListener geht auch hier, wird jedoch bislang nicht benötigt
 
     public SchiffeVersenken() {
         this.setTitle("Schiffe versenken");
@@ -18,7 +18,7 @@ public class SchiffeVersenken extends JFrame { //extends ActionListener geht auc
         String nameSpielerEins = (String) JOptionPane.showInputDialog(this, "Gebe bitte den Namen von Spieler 1 ein:", "Optionale Eingabe", JOptionPane.INFORMATION_MESSAGE, icon, null, ""); //gibt den Typen "Object" zurück
         String nameSpielerZwei = (String) JOptionPane.showInputDialog(this, "Gebe bitte den Namen von Spieler 2 ein:", "Optionale Eingabe", JOptionPane.INFORMATION_MESSAGE, icon, null, ""); //gibt den Typen "Object" zurück
 
-        if (nameSpielerEins == null || nameSpielerEins.isEmpty()) {//null == true wenn ABBRECHEN, isEmpty()==true wenn OK
+        if (nameSpielerEins == null || nameSpielerEins.isEmpty()) {//null == true (ABBRECHEN), isEmpty()==true (OK)
             nameSpielerEins = "Spieler 1";
         }
         if (nameSpielerZwei == null || nameSpielerZwei.isEmpty()) {
@@ -32,10 +32,10 @@ public class SchiffeVersenken extends JFrame { //extends ActionListener geht auc
         hauptbereich.add(spielbereichEins);
         hauptbereich.add(spielbereichZwei);
 
-        spielbereichEins.setGegnerischerSpielbereich(spielbereichZwei); //so lernt die ein Instanz, die andere "kennen"
+        spielbereichEins.setGegnerischerSpielbereich(spielbereichZwei); //so lernt die ein Instanz, die andere kennen
         spielbereichZwei.setGegnerischerSpielbereich(spielbereichEins);
 
-        //TODO hauptbereich.setBorder(new LineBorder(Color.RED));    //Rahmen des Breichs einfärben
+        //TODO hauptbereich.setBorder(new LineBorder(Color.RED));    //Rahmen des Bereichs einfärben
         this.add(hauptbereich);
         this.pack(); //Größe des JFrames wird an den Inhalt angepasst
     }
