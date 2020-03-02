@@ -1,10 +1,10 @@
-package Schiffeversenken;
+package SchiffeVersenken;
 
 import javax.swing.*;
 
-public class Schiffeversenken extends JFrame { //extends ActionListener geht auch hier, wird aber bis jetzt hier nicht benötigt
+public class SchiffeVersenken extends JFrame { //extends ActionListener geht auch hier, wird aber bis jetzt hier nicht benötigt
 
-    public Schiffeversenken() {
+    public SchiffeVersenken() {
         this.setTitle("Schiffe versenken");
         this.setSize(500, 500);
         this.setResizable(false);
@@ -12,9 +12,9 @@ public class Schiffeversenken extends JFrame { //extends ActionListener geht auc
         this.setLocationRelativeTo(null);    //damit das Fenster zentriert erscheint
         this.setVisible(true);
 
-        JPanel hauptbereich = new JPanel(); //ein Haupt-JPanel, der später alles beinhalten wird (ist im JFrame von Schiffeversenken) beinhaltet zwei Spielbereich-Instanzen
+        JPanel hauptbereich = new JPanel(); //ein Haupt-JPanel, der später alles beinhalten wird (ist im JFrame von SchiffeVersenken) beinhaltet zwei Spielbereich-Instanzen
 
-        ImageIcon icon = new ImageIcon("icons/schiffeversenkenIcons/benutzerIcon.png");
+        ImageIcon icon = new ImageIcon("icons/schiffeVersenkenIcons/benutzerIcon.png");
         String nameSpielerEins = (String) JOptionPane.showInputDialog(this, "Gebe bitte den Namen von Spieler 1 ein:", "Optionale Eingabe", JOptionPane.INFORMATION_MESSAGE, icon, null, ""); //gibt den Typen "Object" zurück
         String nameSpielerZwei = (String) JOptionPane.showInputDialog(this, "Gebe bitte den Namen von Spieler 2 ein:", "Optionale Eingabe", JOptionPane.INFORMATION_MESSAGE, icon, null, ""); //gibt den Typen "Object" zurück
 

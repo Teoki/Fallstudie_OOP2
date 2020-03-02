@@ -3,7 +3,7 @@ package Hauptmenue;
 import ErscheintBaldFenster.Fehlermeldung;
 import Memory.*;
 import VierGewinnt.VierGewinnt;
-import Schiffeversenken.Schiffeversenken;
+import SchiffeVersenken.SchiffeVersenken;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,8 +21,8 @@ public class Hauptmenue extends JFrame {
         JButton memoryBtn = new JButton();
         setButton(memoryBtn, "Memory", "icons/hauptmenueIcons/memory.png");
 
-        JButton schiffeversenkenBtn = new JButton();
-        setButton(schiffeversenkenBtn, "Schiffe versenken", "icons/hauptmenueIcons/schiffe_versenken.png");
+        JButton schiffeVersenkenBtn = new JButton();
+        setButton(schiffeVersenkenBtn, "Schiffe versenken", "icons/hauptmenueIcons/schiffe_versenken.png");
 
         JButton vierGewinntBtn = new JButton();
         setButton(vierGewinntBtn, "Vier gewinnt", "icons/hauptmenueIcons/vier_gewinnt.png");
@@ -37,7 +37,7 @@ public class Hauptmenue extends JFrame {
         setButton(muehleBtn, "Mühle", "icons/hauptmenueIcons/muehle.png");
 
         this.add(memoryBtn);
-        this.add(schiffeversenkenBtn);
+        this.add(schiffeVersenkenBtn);
         this.add(vierGewinntBtn);
         this.add(monopolyBtn);
         this.add(ticTacToeBtn);
@@ -45,7 +45,7 @@ public class Hauptmenue extends JFrame {
 
         //Fenster werden durch ActionEvent erzeugt,-> die Klasse "ActionListener" hat nur eine Methode "actionPerformed()" die bei einem Klick aufgerufen wird
         memoryBtn.addActionListener(e -> new Memory());
-        schiffeversenkenBtn.addActionListener(e -> new Schiffeversenken());
+        schiffeVersenkenBtn.addActionListener(e -> new SchiffeVersenken());
         vierGewinntBtn.addActionListener(e -> new VierGewinnt());
         monopolyBtn.addActionListener(e -> new Fehlermeldung("Monopoly"));
         ticTacToeBtn.addActionListener(e -> new Fehlermeldung("Tic Tac Toe"));

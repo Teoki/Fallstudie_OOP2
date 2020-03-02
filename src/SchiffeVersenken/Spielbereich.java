@@ -1,4 +1,4 @@
-package Schiffeversenken;
+package SchiffeVersenken;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +16,7 @@ public class Spielbereich extends JPanel implements ActionListener {
     private int anzahlSchiffe = 3; //könnte eine lokale Variable sein, aber steht hier, falls man den User entscheiden lassen will kann man den Wert beim Erzeugen eines Spielbereichs übergeben
     private int platzierteSchiffe; //wird als Zählervariable im ActionListener verwendet
     private int anzahlTreffer; //Zählervariable im ActionListener
-    private JFrame spielFenster; //um nach dem Sieg das Spielfenster (also Schiffeversenken) zu schließen
+    private JFrame spielFenster; //um nach dem Sieg das Spielfenster (also SchiffeVersenken) zu schließen
     private Spielbereich gegnerischerSpielbereich;
 
     public Spielbereich(String name, JFrame spielFenster) {
@@ -48,7 +48,7 @@ public class Spielbereich extends JPanel implements ActionListener {
         this.setVisible(true);
     }
 
-    public void setGegnerischerSpielbereich(Spielbereich gegnerischerSpielbereich) {
+    void setGegnerischerSpielbereich(Spielbereich gegnerischerSpielbereich) { //ohne modifizierer: package-private
         this.gegnerischerSpielbereich = gegnerischerSpielbereich;
     }
 
@@ -101,7 +101,7 @@ public class Spielbereich extends JPanel implements ActionListener {
             int dialogResult = JOptionPane.showConfirmDialog(this, gegnerischerSpielbereich.getName() + " hat gewonnen! Nochmal spielen?", "Sieg!", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, new ImageIcon("icons/schiffeversenkenIcons/siegerKapitaen.png"));
             if (dialogResult == 0) { //0=ja  (falls ja geklickt wurde)
                 spielFenster.dispose();
-                new Schiffeversenken();
+                new SchiffeVersenken();
             } else {                   //falls nein geklickt wird
                 spielFenster.dispose();
             }
