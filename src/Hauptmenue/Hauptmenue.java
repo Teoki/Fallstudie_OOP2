@@ -15,7 +15,7 @@ public class Hauptmenue extends JFrame {
         this.setPreferredSize(new Dimension(430, 340));
         this.setMinimumSize(new Dimension(430, 340));
         this.setLayout(new FlowLayout());
-        this.setLocationRelativeTo(null); //Fenster soll zentriert geöffnet werden
+        this.setLocationRelativeTo(null); //Fenster soll zentriert geöffnet werden.
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         JButton memoryBtn = new JButton();
